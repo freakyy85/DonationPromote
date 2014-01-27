@@ -1,0 +1,21 @@
+author: Uwe Pfeifer
+database: false
+description: Provides a command, that takes a player argument. When executed the player
+  wil be checked for his rank. If he is in group Donator or Dedicated do nothing.
+  If hes Premium promote to Dedicated, if hes Builder promote to Dontator.
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: de.unitycraft.plugins.uc_donationpromote.DonationPromote
+name: DonationPromote
+startup: postworld
+version: '0.1'
+depend: [Vault]
+commands:
+   donationpromote:
+      description: Promotes Builders to Donators and Premium to Dedicated.
+      usage: /<command> <player>
+      permission: donationpromote.command
+      permission-message: You don't have <permission>
+permissions:
+    donationpromote.command:
+        description: Gives access to the donationpromote command.
+        default: op
