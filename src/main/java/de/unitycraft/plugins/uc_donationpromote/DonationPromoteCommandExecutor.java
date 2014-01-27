@@ -23,9 +23,9 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
             if (!sender.hasPermission("donationpromote.command")) {
                 sender.sendMessage("You don't have permission.");
             }
-            if (sender instanceof Player) {
-                sender.sendMessage("This command can only be run by console.");
-            }
+//            if (sender instanceof Player) {
+//                sender.sendMessage("This command can only be run by console.");
+//            }
             if (args.length != 1) {
                 // returning false will auto give help from plugin.yml :)
                 return false;
