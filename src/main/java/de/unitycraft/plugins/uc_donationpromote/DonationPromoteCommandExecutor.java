@@ -23,7 +23,7 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
                 sender.sendMessage("You don't have permission.");
             }
             if(args.length != 1) {
-                // will auto give help
+                // will auto give help :)
                 return(false);
             }
 
