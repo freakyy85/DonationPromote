@@ -23,7 +23,7 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
                 sender.sendMessage("You don't have permission.");
             }
             if(args.length != 1) {
-                // will auto give help :)
+                // returning false will auto give help from plugin.yml :)
                 return(false);
             }
 
