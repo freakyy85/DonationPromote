@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8eea1fb-a382-471b-be50-8a26cc95c285" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/de/unitycraft/plugins/uc_donationpromote/DonationPromote.java" afterPath="$PROJECT_DIR$/src/main/java/de/unitycraft/plugins/uc_donationpromote/DonationPromote.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DonationPromote.iws" />
@@ -542,7 +541,11 @@
       <created>1390831132204</created>
       <updated>1390831132204</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit&#10;">
+      <created>1390832130379</created>
+      <updated>1390832130379</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
