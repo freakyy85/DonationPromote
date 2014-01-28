@@ -30,24 +30,25 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
 //                sender.sendMessage("This command can only be run by console.");
 //            }
             if (args.length != 1) {
-                // returning false will auto give help from plugin.yml :)
-                return false;
+                sender.sendMessage("You forgot to specify the player!");
+                return true;
             }
-            if(args.length == 0) {
-                return false;
-            }
+            //if(args.length == 0) {
+            //    return true;
+            //}
 
             // Only works when player is online.
             pToPromote = Bukkit.getServer().getPlayer(args[0]);
-            if(pToPromote == null) {
+            if (pToPromote == null) {
                 sender.sendMessage("The player " + args[0] + " is not online.");
                 return true;
             }
-            sender.sendMessage("Promoting player: " + args[0]);
             if (plugin.perms.has(pToPromote, "group.builder")) {
-                sender.sendMessage("USer is Builder. Promoting to donator.");
+                sender.sendMessage("Player is Builder. Promoting to Donator.");
+            } else if (plugin.perms.has(pToPromote, "group.premium")) {
+                sender.sendMessage("Player is Premium. Promoting to Dedicated.");
             } else {
-                sender.sendMessage("Another rank than builder ... just testing ...");
+                sender.sendMessage("Player is not Builder nor Premium, so not promoting.");
             }
 
             return true;
