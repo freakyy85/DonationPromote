@@ -45,10 +45,16 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
             }
             if (plugin.perms.has(pToPromote, "group.builder")) {
                 sender.sendMessage("Player is Builder. Promoting to Donator.");
+                plugin.perms.playerAddGroup(pToPromote, "Donator");
+                plugin.perms.playerRemoveGroup(pToPromote, "Builder");
+                return true;
             } else if (plugin.perms.has(pToPromote, "group.premium")) {
                 sender.sendMessage("Player is Premium. Promoting to Dedicated.");
+                plugin.perms.playerAddGroup(pToPromote, "Dedicated");
+                plugin.perms.playerRemoveGroup(pToPromote, "Premium");
             } else {
-                sender.sendMessage("Player is not Builder nor Premium, so not promoting.");
+                sender.sendMessage("Player is not Builder nor Premium, so not promoting/demoting.");
+                return true;
             }
 
             return true;
