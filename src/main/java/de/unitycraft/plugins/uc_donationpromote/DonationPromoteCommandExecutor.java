@@ -30,7 +30,8 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
 //                sender.sendMessage("This command can only be run by console.");
 //            }
             if (args.length != 1) {
-                sender.sendMessage("You forgot to specify the player!");
+                sender.sendMessage("Wrong usage:");
+                sender.sendMessage("/<command> <player>");
                 return true;
             }
             //if(args.length == 0) {
