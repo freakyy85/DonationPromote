@@ -1,5 +1,7 @@
 package de.unitycraft.plugins.uc_donationpromote;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,7 +19,8 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        Player player = (Player) sender;
+        //Player player = (Player) sender;
+        Player pToPromote;
 
         if (cmd.getName().equalsIgnoreCase("donationpromote")) {
             if (!sender.hasPermission("donationpromote.command")) {
@@ -30,9 +33,18 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
                 // returning false will auto give help from plugin.yml :)
                 return false;
             }
+            if(args.length == 0) {
+                return false;
+            }
 
+            // Only works when player is online.
+            pToPromote = Bukkit.getServer().getPlayer(args[0]);
+            if(pToPromote == null) {
+                sender.sendMessage("The player " + args[0] + " is not online.");
+                return true;
+            }
             sender.sendMessage("Promoting player: " + args[0]);
-            if (plugin.perms.has(player, "group.builder")) {
+            if (plugin.perms.has(pToPromote, "group.builder")) {
                 sender.sendMessage("USer is Builder. Promoting to donator.");
             } else {
                 sender.sendMessage("Another rank than builder ... just testing ...");
