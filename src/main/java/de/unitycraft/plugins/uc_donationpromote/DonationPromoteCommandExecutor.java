@@ -43,6 +43,7 @@ public class DonationPromoteCommandExecutor implements CommandExecutor {
                 sender.sendMessage("The player " + args[0] + " is not online.");
                 return true;
             }
+            // Could also be done with pToPromote.hasPermission(String);
             if (DonationPromote.perms.has(pToPromote, "group.builder")) {
                 sender.sendMessage("Player is Builder. Promoting to Donator.");
                 DonationPromote.perms.playerAddGroup(pToPromote, "Donator");
