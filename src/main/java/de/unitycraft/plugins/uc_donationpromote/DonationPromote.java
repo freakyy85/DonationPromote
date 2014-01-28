@@ -17,7 +17,9 @@ public class DonationPromote extends JavaPlugin {
 
     public void onEnable() {
         getLogger().info("DonationPromotion v0.1 has been loaded.");
-        getCommand("donationpromote").setExecutor(new DonationPromoteCommandExecutor(this));
+        getCommand("donationpromote").setExecutor(new DonationPromoteCommandExecutor());
+        // In case the DonationPromoteCommandExecutor() needs access to this instance.
+        // getCommand("donationpromote").setExecutor(new DonationPromoteCommandExecutor(this));
 
         setupPermissions();
     }
